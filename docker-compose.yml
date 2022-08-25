@@ -1,0 +1,21 @@
+version: "3.9"
+services:
+  web:
+    image: tomcat:9
+    container_name: tomcat9
+    hostname: tomcat9
+    restart: always
+    ports:
+      - 8080:8080
+    volumes:
+      - tomcat9-conf:/usr/local/tomcat/conf
+      - tomcat9-log:/vusr/local/tomcat/logs
+      - tomcat9-webapps:/usr/local/tomcat/webapps
+  
+volumes:
+  tomcat9-conf:
+    name: tomcat9-conf
+  tomcat9-log:
+    name: tomcat9-log
+  tomcat9-webapps:
+    name: tomcat9-webapps
